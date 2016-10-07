@@ -84,6 +84,11 @@ namespace SevenShadow.TagniFi
             if (request.Periods > 0)
                 request.EndPoint += "&" + GetEnumDescription(TagnifiParameters.Periods) + "=" + request.Periods.ToString();
 
+            if (request.UseRelativePeriod)
+            {
+                request.EndPoint += "&relative_period=" + request.RelativePeriod.ToString();
+
+            }
             RestClient client = new RestClient(request);
             string rawResponseString = client.MakeRequest();
 
