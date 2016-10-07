@@ -14,8 +14,16 @@ namespace SevenShadow.TagniFi
         [Description("annual")]
         Annual = 0,
 
-        [Description("quarterly")]
+        [Description("quarter")]
         Quarterly = 1,
+
+        [Description("ttm")]
+        TrailingTwelveMonths = 2,
+
+        [Description("year_to_date")]
+        YearToDate = 3,
+
+        
 
     }
 

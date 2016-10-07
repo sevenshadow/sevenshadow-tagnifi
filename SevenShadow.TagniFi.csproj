@@ -73,9 +73,10 @@
     <Compile Include="Transparency.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".gitignore" />
     <None Include="packages.config" />
-    <None Include="SevenShadow.TagniFi.nuspec" />
+    <None Include="SevenShadow.TagniFi.nuspec">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
