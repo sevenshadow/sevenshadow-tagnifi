@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.0.3.0</version>
+    <version>1.0.4.0</version>
     <title>$title$</title>
     <authors>Charlie Strout</authors>
     <owners>Seven Shadow LLC</owners>
@@ -11,7 +11,7 @@
     <!-- <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl> -->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>.NET project that wraps Tagnifi API.</description>
-    <releaseNotes>Added support for company lookup, limit and template.</releaseNotes>
+    <releaseNotes>Added support for company coverage call.</releaseNotes>
     <copyright>Copyright 2016 - 2017 Seven Shadow LLC</copyright>
     <tags>sevenshadow tagnifi</tags>
   </metadata>

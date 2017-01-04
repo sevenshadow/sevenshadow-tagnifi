@@ -166,7 +166,7 @@ namespace SevenShadow.TagniFi
 
         #region Covered Company Information
 
-        public CompanyResponse GetCoveredCompanies(string id)
+        public CompanyResponse GetCoveredCompanies()
         {
             TagniFiRequest request = new TagniFiRequest();
             request.ApiKey = ApiKey;
@@ -187,7 +187,6 @@ namespace SevenShadow.TagniFi
         }
 
         #endregion
-
 
         #region Private Methods
 
