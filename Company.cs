@@ -32,6 +32,20 @@ namespace SevenShadow.TagniFi
         [DataMember(Name = "fundamentals_history_link")]
         public string Fundamentals_History_Link { get; set; }
 
+        [DataMember(Name = "description")]
+        public string Description { get; set; }
+
+        [DataMember(Name = "naics")]
+        public string Naics { get; set; }
+
+        [DataMember(Name = "industry")]
+        public string Industry { get; set; }
+
+        [DataMember(Name = "exchange")]
+        public string Exchange { get; set; }
+
+        [DataMember(Name = "employees")]
+        public int Employees { get; set; }
 
     }
 }
