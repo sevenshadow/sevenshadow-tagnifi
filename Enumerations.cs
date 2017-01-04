@@ -80,8 +80,8 @@ namespace SevenShadow.TagniFi
         [Description("relative_period")]
         RelativePeriod = 7,
 
-        [Description("template")]
-        Template = 8,
+        [Description("industry_template")]
+        IndustryTemplate = 8,
         [Description("limit")]
         Limit = 9,
 

@@ -57,7 +57,7 @@ namespace SevenShadow.TagniFi
                 request.EndPoint += "&" + GetEnumDescription(TagnifiParameters.Limit) + "=" + request.Limit.ToString();
 
             if (!string.IsNullOrEmpty(request.Template))
-                request.EndPoint += "&" + GetEnumDescription(TagnifiParameters.Template) + "=" + request.Template;
+                request.EndPoint += "&" + GetEnumDescription(TagnifiParameters.IndustryTemplate) + "=" + request.Template;
 
             RestClient client = new RestClient(request);
             string rawResponseString = client.MakeRequest();
@@ -99,7 +99,7 @@ namespace SevenShadow.TagniFi
                 request.EndPoint += "&" + GetEnumDescription(TagnifiParameters.Limit) + "=" + request.Limit.ToString();
 
             if (!string.IsNullOrEmpty(request.Template))
-                request.EndPoint += "&" + GetEnumDescription(TagnifiParameters.Template) + "=" + request.Template;
+                request.EndPoint += "&" + GetEnumDescription(TagnifiParameters.IndustryTemplate) + "=" + request.Template;
 
             RestClient client = new RestClient(request);
             string rawResponseString = client.MakeRequest();
