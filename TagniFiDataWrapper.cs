@@ -148,7 +148,7 @@ namespace SevenShadow.TagniFi
             request.ApiKey = ApiKey;
 
             string statementBaseUrl = "{0}{1}?company={2}";
-            request.EndPoint = string.Format(statementBaseUrl, BaseApiUrl, GetEnumDescription(TagnifiQueryType.Companies), ticker);
+            request.EndPoint = string.Format(statementBaseUrl, BaseApiUrl, GetEnumDescription(TagnifiQueryType.Companies), id);
 
             RestClient client = new RestClient(request);
             string rawResponseString = client.MakeRequest();
@@ -162,6 +162,8 @@ namespace SevenShadow.TagniFi
 
         }
 
+        #endregion
+
         #region Covered Company Information
 
         public CompanyResponse GetCoveredCompanies(string id)
@@ -170,7 +172,7 @@ namespace SevenShadow.TagniFi
             request.ApiKey = ApiKey;
 
             string statementBaseUrl = "{0}{1}/covered";
-            request.EndPoint = string.Format(statementBaseUrl, BaseApiUrl, GetEnumDescription(TagnifiQueryType.Companies), ticker);
+            request.EndPoint = string.Format(statementBaseUrl, BaseApiUrl, GetEnumDescription(TagnifiQueryType.Companies));
 
             RestClient client = new RestClient(request);
             string rawResponseString = client.MakeRequest();
