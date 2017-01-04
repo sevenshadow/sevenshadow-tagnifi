@@ -52,7 +52,13 @@ namespace SevenShadow.TagniFi
 
             if (request.Periods > 0)
                 request.EndPoint += "&" + GetEnumDescription(TagnifiParameters.Periods) + "=" + request.Periods.ToString();
-           
+
+            if (request.Limit > 0)
+                request.EndPoint += "&" + GetEnumDescription(TagnifiParameters.Limit) + "=" + request.Limit.ToString();
+
+            if (!string.IsNullOrEmpty(request.Template))
+                request.EndPoint += "&" + GetEnumDescription(TagnifiParameters.Template) + "=" + request.Template;
+
             RestClient client = new RestClient(request);
             string rawResponseString = client.MakeRequest();
 
@@ -89,6 +95,12 @@ namespace SevenShadow.TagniFi
                 request.EndPoint += "&relative_period=" + request.RelativePeriod.ToString();
 
             }
+            if (request.Limit > 0)
+                request.EndPoint += "&" + GetEnumDescription(TagnifiParameters.Limit) + "=" + request.Limit.ToString();
+
+            if (!string.IsNullOrEmpty(request.Template))
+                request.EndPoint += "&" + GetEnumDescription(TagnifiParameters.Template) + "=" + request.Template;
+
             RestClient client = new RestClient(request);
             string rawResponseString = client.MakeRequest();
 
@@ -127,6 +139,53 @@ namespace SevenShadow.TagniFi
         }
 
         #endregion
+
+        #region Company Information
+
+        public CompanyResponse GetCompany(string id)
+        {
+            TagniFiRequest request = new TagniFiRequest();
+            request.ApiKey = ApiKey;
+
+            string statementBaseUrl = "{0}{1}?company={2}";
+            request.EndPoint = string.Format(statementBaseUrl, BaseApiUrl, GetEnumDescription(TagnifiQueryType.Companies), ticker);
+
+            RestClient client = new RestClient(request);
+            string rawResponseString = client.MakeRequest();
+
+            CompanyResponse response = (CompanyResponse)JsonConvert.DeserializeObject(rawResponseString, typeof(CompanyResponse));
+
+            response.Request = request;
+            response.RawResponse = rawResponseString;
+
+            return response;
+
+        }
+
+        #region Covered Company Information
+
+        public CompanyResponse GetCoveredCompanies(string id)
+        {
+            TagniFiRequest request = new TagniFiRequest();
+            request.ApiKey = ApiKey;
+
+            string statementBaseUrl = "{0}{1}/covered";
+            request.EndPoint = string.Format(statementBaseUrl, BaseApiUrl, GetEnumDescription(TagnifiQueryType.Companies), ticker);
+
+            RestClient client = new RestClient(request);
+            string rawResponseString = client.MakeRequest();
+
+            CompanyResponse response = (CompanyResponse)JsonConvert.DeserializeObject(rawResponseString, typeof(CompanyResponse));
+
+            response.Request = request;
+            response.RawResponse = rawResponseString;
+
+            return response;
+
+        }
+
+        #endregion
+
 
         #region Private Methods
 

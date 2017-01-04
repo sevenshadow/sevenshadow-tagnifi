@@ -18,6 +18,10 @@ namespace SevenShadow.TagniFi
         public bool UseRelativePeriod { get; set; }
         public int RelativePeriod { get; set; }
 
-     
+        public int Limit { get; set; }
+
+        public string Template { get; set; }
+
+
     }
 }

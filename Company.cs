@@ -26,6 +26,12 @@ namespace SevenShadow.TagniFi
         [DataMember(Name = "ticker")]
         public string Ticker { get; set; }
 
+        [DataMember(Name = "industry_template")]
+        public string Industry_Template { get; set; }
+
+        [DataMember(Name = "fundamentals_history_link")]
+        public string Fundamentals_History_Link { get; set; }
+
 
     }
 }

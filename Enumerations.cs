@@ -79,6 +79,11 @@ namespace SevenShadow.TagniFi
         Tag = 6,
         [Description("relative_period")]
         RelativePeriod = 7,
-        
+
+        [Description("template")]
+        Template = 8,
+        [Description("limit")]
+        Limit = 9,
+
     }
 }
